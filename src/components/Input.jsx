@@ -1,11 +1,11 @@
 import { forwardRef } from 'react';
 import styled from 'styled-components';
 
-const Input = forwardRef(({ onChange }, ref) => {
+const Input = forwardRef((_, ref) => {
   return (
     <Wrapper>
       <Title>입력창</Title>
-      <InputStyled ref={ref} onChange={onChange} placeholder='ex: 1,2,3' />
+      <InputStyled ref={ref} placeholder='ex: 1,2,3' />
     </Wrapper>
   );
 });

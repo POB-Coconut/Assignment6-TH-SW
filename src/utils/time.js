@@ -1,8 +1,10 @@
 export const setKoreaTime = (type) => {
-  const curr = new Date();
-  const utc = curr.getTime() + curr.getTimezoneOffset() * 60 * 1000;
+  const date = new Date();
 
-  // UTC to KST (UTC + 9시간)
-  const KR_TIME_DIFF = 9 * 60 * 60 * 1000;
-  return new Date(utc + KR_TIME_DIFF).toLocaleString(type);
+  const UTC = date.getTime() + date.getTimezoneOffset() * 60 * 1000;
+  const KST = UTC + 9 * 60 * 60 * 1000;
+
+  const options = { year: 'numeric', weekday: 'long', month: 'long', day: 'numeric' };
+
+  return new Date(KST).toLocaleDateString(type, options);
 };

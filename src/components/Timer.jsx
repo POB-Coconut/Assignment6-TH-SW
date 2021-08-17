@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import useTimer from '../hook/useTimer';
+import { useTimer } from '../hook';
 
 const Timer = ({ type }) => {
   const time = useTimer(type);
