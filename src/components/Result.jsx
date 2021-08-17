@@ -1,26 +1,24 @@
 import styled from 'styled-components';
 
-const Result = ({ type, numbers }) => {
+const Result = ({ numbers, color }) => {
   return (
     <Wrapper>
-      <Title>{type} 결과</Title>
-      <Number>{numbers.join(',')}</Number>
+      <Number color={color}>{numbers.join(',')}</Number>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
   width: 100%;
-  display: flex;
-  align-items: center;
-  border: 1px solid black;
-  gap: 24px;
+  border-bottom: solid 1px #bbbbbb;
 `;
 
-const Title = styled.h2``;
-
 const Number = styled.h3`
-  font-size: 24px;
+  font-size: 16px;
+  color: ${(props) => props.color};
+  height: 16px;
+  margin: 8px 0;
+  width: 100%;
 `;
 
 export default Result;

@@ -6,7 +6,6 @@ const Timer = ({ type }) => {
 
   return (
     <Wrapper>
-      {type}
       <Time>{time}</Time>
     </Wrapper>
   );
@@ -14,9 +13,14 @@ const Timer = ({ type }) => {
 
 const Wrapper = styled.div`
   width: 100%;
-  border: 1px solid black;
+  border-bottom: solid 1px #bbbbbb;
 `;
 
-const Time = styled.h3``;
+const Time = styled.h3`
+  font-size: 16px;
+  /* height: 16px; */
+  margin: 8px 0;
+  width: 100%;
+`;
 
 export default Timer;
