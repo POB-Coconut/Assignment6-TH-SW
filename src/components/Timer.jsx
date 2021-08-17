@@ -1,18 +1,12 @@
-import { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { useTimer } from '../hook';
 
 const Timer = ({ type }) => {
-  const [time, setTime] = useState(new Date().toLocaleString(type));
-
-  useEffect(() => {
-    setInterval(() => {
-      setTime(new Date().toLocaleString(type));
-    }, 1000);
-  }, []);
+  const time = useTimer(type);
 
   return (
     <Wrapper>
-      <Title>{type} 타이머</Title>
+      {type}
       <Time>{time}</Time>
     </Wrapper>
   );
@@ -23,7 +17,6 @@ const Wrapper = styled.div`
   border: 1px solid black;
 `;
 
-const Title = styled.h2``;
 const Time = styled.h3``;
 
 export default Timer;

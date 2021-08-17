@@ -23,11 +23,7 @@
 
 #### Compiles and hot-reloads for development
 
-`npm run serve`
-
-#### Compiles and minifies for production
-
-`npm run build`
+`npm start`
 
 ## 🔧 Skills
 
@@ -111,7 +107,6 @@
 
 ## Reference
 
-- 이 프로젝트는 솔라커넥트의 케이스 과제 자료로, 학습 목적으로 만들었습니다.
-- 이 프로젝트에서 사용하고 있는 자료는 솔라커넥트 측에서 제공받았습니다.
+정규식: https://regexr.com/
 
 ---

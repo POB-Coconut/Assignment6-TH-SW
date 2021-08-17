@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StartButton = ({ onClick }) => {
+const StartButton = ({ onSubmit }) => {
   return (
     <Wrapper>
-      <Button onClick={onClick}>시작</Button>
+      <Button onClick={onSubmit}>시작</Button>
     </Wrapper>
   );
 };
