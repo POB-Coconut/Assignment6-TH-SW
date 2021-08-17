@@ -18,7 +18,6 @@ const Wrapper = styled.div`
 
 const Time = styled.h3`
   font-size: 16px;
-  /* height: 16px; */
   margin: 8px 0;
   width: 100%;
 `;

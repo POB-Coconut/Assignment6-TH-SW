@@ -6,7 +6,7 @@ const useSort = (number) => {
   const [descNumber, setDescNumber] = useState([]);
 
   useEffect(() => {
-    if (!number.length) return; // 첫 마운트 제외
+    if (!number.length) return;
 
     setAscNumber(ascendingSort([...number]));
     setDescNumber([]);

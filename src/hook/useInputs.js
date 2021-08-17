@@ -1,7 +1,7 @@
 import { useState, useCallback, useRef } from 'react';
 import { ERROR_MSG } from '../utils/config';
 import { validateInput } from '../utils/validation';
-import { convertToNumArray } from '../utils/convert';
+import { stringToNumArray } from '../utils/convert';
 
 const useInputs = () => {
   const [numbers, setNumbers] = useState([]);
@@ -9,13 +9,14 @@ const useInputs = () => {
 
   const onSubmit = useCallback(() => {
     const value = inputRef.current.value;
+
     if (validateInput(value)) {
-      setNumbers(convertToNumArray(value));
+      setNumbers(stringToNumArray(value));
     } else {
       inputRef.current.value = null;
       alert(ERROR_MSG);
     }
-  }, []);
+  }, [setNumbers, inputRef]);
 
   return [numbers, onSubmit, inputRef];
 };
