@@ -1,48 +1,24 @@
 import { Input, Timer, Result, StartButton } from './components';
+import { useInputs, useSort } from './hook';
 import styled from 'styled-components';
-import { useState, useEffect, useCallback, useRef } from 'react';
-
-import { ERROR_MSG } from './utils/config';
-import { validateInput } from './utils/validation';
-import { ascendingSort, descendingSort } from './utils/sort';
-import { convertToNumArray } from './utils/convert';
+import GlobalStyles from './styles/GlobalStyles';
 
 const App = () => {
-  const [ascNumber, setAscNumber] = useState([]);
-  const [descNumber, setDescNumber] = useState([]);
-  const [numbers, setNumbers] = useState([]);
-  const inputRef = useRef(null);
-
-  const handleClick = useCallback(() => {
-    const value = inputRef.current.value;
-    if (validateInput(value)) {
-      setNumbers(convertToNumArray(value));
-    } else {
-      inputRef.current.value = null;
-      alert(ERROR_MSG);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (!numbers.length) return; // 첫 마운트 제외
-
-    setAscNumber(ascendingSort([...numbers]));
-    setDescNumber([]);
-
-    setTimeout(() => {
-      setDescNumber(descendingSort([...numbers]));
-    }, 3000);
-  }, [numbers]);
+  const [value, onSubmit, inputRef] = useInputs();
+  const [ascNumber, descNumber] = useSort(value);
 
   return (
-    <Wrapper>
-      <Timer type='ko-KR' />
-      <Input ref={inputRef} />
-      <StartButton onClick={handleClick} />
-      <Result type='오름차순' numbers={ascNumber} />
-      <Result type='내림차순' numbers={descNumber} />
-      <Timer type='en-US' />
-    </Wrapper>
+    <>
+      <GlobalStyles />
+      <Wrapper>
+        <Timer type='ko-KR' />
+        <Input ref={inputRef} />
+        <StartButton onSubmit={onSubmit} />
+        <Result type='오름차순' numbers={ascNumber} />
+        <Result type='내림차순' numbers={descNumber} />
+        <Timer type='en-US' />
+      </Wrapper>
+    </>
   );
 };
 
