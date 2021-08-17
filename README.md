@@ -37,6 +37,7 @@ const KR_TIME = new Date(KST).toLocaleDateString(type, options);
 ```
 3. `Merge Sort`를 통한, 오름/내림차순 정렬 구현 
 4. `useInput`, `useTimer` 등 custom hook
+5. 재사용 가능한 `Timer`, `Result` 컴포넌트 구성
 
 ## 데모 영상
 ![sorting-machine-demo](https://user-images.githubusercontent.com/19265753/129756655-638c7604-9c15-44db-b3eb-1e95bda74b2a.gif)
