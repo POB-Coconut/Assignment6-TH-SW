@@ -15,7 +15,7 @@ const App = () => {
         <Container>
           <Header>Sorting Machine</Header>
           <Box>
-            <Label>kr-KR</Label>
+            <Label>TIMER-KR</Label>
             <Content>
               <Timer type='ko-KR' />
             </Content>
@@ -40,7 +40,7 @@ const App = () => {
             </Content>
           </Box>
           <Box>
-            <Label>en-US</Label>
+            <Label>TIMER-US</Label>
             <Content>
               <Timer type='en-US' />
             </Content>
