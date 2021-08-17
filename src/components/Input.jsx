@@ -2,26 +2,16 @@ import { forwardRef } from 'react';
 import styled from 'styled-components';
 
 const Input = forwardRef((_, ref) => {
-  return (
-    <Wrapper>
-      <Title>입력창</Title>
-      <InputStyled ref={ref} placeholder='ex: 1,2,3' />
-    </Wrapper>
-  );
+  return <InputStyled autoFocus ref={ref} placeholder='5,1,3,2,4' />;
 });
 
-const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-`;
-
-const Title = styled.h2``;
-
 const InputStyled = styled.input`
-  width: 50%;
-  height: 48px;
-  font-size: 24px;
+  width: 100%;
+  font-size: 16px;
+  border: none;
+  border-bottom: solid 1px #bbbbbb;
+  outline: none;
+  padding: 0;
 `;
 
 export default Input;
