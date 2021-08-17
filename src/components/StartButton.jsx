@@ -11,6 +11,10 @@ const StartButton = ({ onClick }) => {
 
 const Wrapper = styled.div``;
 
-const Button = styled.button``;
+const Button = styled.button`
+  width: 120px;
+  height: 36px;
+  font-size: 24px;
+`;
 
 export default StartButton;
