@@ -1,30 +1,46 @@
 import { Input, Timer, Result, StartButton } from './components';
-import { useState } from 'react';
 import styled from 'styled-components';
+import { useState, useEffect, useCallback, useRef } from 'react';
+
+import { ERROR_MSG } from './utils/config';
+import { validateInput } from './utils/validation';
 import { ascendingSort, descendingSort } from './utils/sort';
+import { convertToNumArray } from './utils/convert';
 
 const App = () => {
-  const [ascendedNumber, setAscendedNumber] = useState([]);
-  const [descendedNumber, setDescendedNumber] = useState([]);
+  const [ascNumber, setAscNumber] = useState([]);
+  const [descNumber, setDescNumber] = useState([]);
   const [numbers, setNumbers] = useState([]);
+  const inputRef = useRef(null);
 
-  const handleChange = ({ target: { value } }) => setNumbers([...value]);
-  const handleClick = () => {
-    setAscendedNumber(ascendingSort(numbers));
-    setDescendedNumber([]);
+  const handleClick = useCallback(() => {
+    const value = inputRef.current.value;
+    if (validateInput(value)) {
+      setNumbers(convertToNumArray(value));
+    } else {
+      inputRef.current.value = null;
+      alert(ERROR_MSG);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!numbers.length) return; // 첫 마운트 제외
+
+    setAscNumber(ascendingSort([...numbers]));
+    setDescNumber([]);
 
     setTimeout(() => {
-      setDescendedNumber(descendingSort(numbers));
+      setDescNumber(descendingSort([...numbers]));
     }, 3000);
-  };
+  }, [numbers]);
 
   return (
     <Wrapper>
       <Timer type='ko-KR' />
-      <Input onChange={handleChange} />
+      <Input ref={inputRef} />
       <StartButton onClick={handleClick} />
-      <Result type='오름차순' numbers={ascendedNumber} />
-      <Result type='내림차순' numbers={descendedNumber} />
+      <Result type='오름차순' numbers={ascNumber} />
+      <Result type='내림차순' numbers={descNumber} />
       <Timer type='en-US' />
     </Wrapper>
   );
