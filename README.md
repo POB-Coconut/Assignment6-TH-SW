@@ -40,7 +40,7 @@ const KR_TIME = new Date(KST).toLocaleDateString(type, options);
 5. 재사용 가능한 `Timer`, `Result` 컴포넌트 구성
 
 ## 데모 영상
-![sorting-machine-demo](https://user-images.githubusercontent.com/19265753/129756655-638c7604-9c15-44db-b3eb-1e95bda74b2a.gif)
+![demo](https://user-images.githubusercontent.com/19265753/129858887-89a8f187-64d9-4812-b739-287171498dbe.gif)
 
 ## 참고
 Regular Expression: https://regexr.com/
