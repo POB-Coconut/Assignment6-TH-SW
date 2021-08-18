@@ -1,22 +1,28 @@
-export const ascendingSort = (numbers) => mergeSort(numbers, 'asc');
-export const descendingSort = (numbers) => mergeSort(numbers, 'desc');
+export const ascendingSort = (numbers) => bubbleSort(numbers);
+export const descendingSort = (numbers) => bubbleSortReverse(numbers);
 
-const mergeSort = (array, order) => {
-  if (array.length === 1) return array;
-
-  const middleIndex = Math.floor(array.length / 2);
-  const left = array.slice(0, middleIndex);
-  const right = array.slice(middleIndex);
-
-  return merge(mergeSort(left, order), mergeSort(right, order), order);
-};
-
-const merge = (left, right, order) => {
-  const result = [];
-
-  while (left.length !== 0 && right.length !== 0) {
-    left[0] <= right[0] ? result.push(left.shift()) : result.push(right.shift());
+function bubbleSort(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = 0; j < arr.length - i; j++) {
+      if (arr[j + 1] < arr[j]) {
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
   }
+  return arr;
+}
 
-  return order === 'asc' ? [...result, ...left, ...right] : [...right, ...left, ...result];
-};
+function bubbleSortReverse(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = 0; j < arr.length - i; j++) {
+      if (arr[j + 1] > arr[j]) {
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+  return arr;
+}

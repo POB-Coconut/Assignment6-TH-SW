@@ -4,4 +4,4 @@ export const validateInput = (value) => {
   else return true;
 };
 
-const regex = /([0-9]+,){1,}([0-9+]+)/;
+const regex = /([-0-9]+,){1,}([-0-9+]+)/;
