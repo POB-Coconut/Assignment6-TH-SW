@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/Assignment6-TH-SW/static/js/main.3a50f14f.chunk.js",
-    "main.js.map": "/Assignment6-TH-SW/static/js/main.3a50f14f.chunk.js.map",
+    "main.js": "/Assignment6-TH-SW/static/js/main.25e42457.chunk.js",
+    "main.js.map": "/Assignment6-TH-SW/static/js/main.25e42457.chunk.js.map",
     "runtime-main.js": "/Assignment6-TH-SW/static/js/runtime-main.6ea56e53.js",
     "runtime-main.js.map": "/Assignment6-TH-SW/static/js/runtime-main.6ea56e53.js.map",
-    "static/js/2.6d35faed.chunk.js": "/Assignment6-TH-SW/static/js/2.6d35faed.chunk.js",
-    "static/js/2.6d35faed.chunk.js.map": "/Assignment6-TH-SW/static/js/2.6d35faed.chunk.js.map",
+    "static/js/2.e6414c9f.chunk.js": "/Assignment6-TH-SW/static/js/2.e6414c9f.chunk.js",
+    "static/js/2.e6414c9f.chunk.js.map": "/Assignment6-TH-SW/static/js/2.e6414c9f.chunk.js.map",
     "index.html": "/Assignment6-TH-SW/index.html",
-    "static/js/2.6d35faed.chunk.js.LICENSE.txt": "/Assignment6-TH-SW/static/js/2.6d35faed.chunk.js.LICENSE.txt"
+    "static/js/2.e6414c9f.chunk.js.LICENSE.txt": "/Assignment6-TH-SW/static/js/2.e6414c9f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6ea56e53.js",
-    "static/js/2.6d35faed.chunk.js",
-    "static/js/main.3a50f14f.chunk.js"
+    "static/js/2.e6414c9f.chunk.js",
+    "static/js/main.25e42457.chunk.js"
   ]
 }
