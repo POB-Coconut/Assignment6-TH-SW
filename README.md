@@ -35,7 +35,7 @@ const UTC = new Date().getTime() + new Date().getTimezoneOffset() * 60 * 1000;
 const KST = UTC + TIME_OFFSET; // OFFSET = 9h
 const KR_TIME = new Date(KST).toLocaleDateString(type, options);
 ```
-3. `Merge Sort`를 통한, 오름/내림차순 정렬 구현 
+3. `Bubble Sort`를 통한, 오름/내림차순 정렬 구현 
 4. `useInput`, `useTimer` 등 custom hook
 5. 재사용 가능한 `Timer`, `Result` 컴포넌트 구성
 
